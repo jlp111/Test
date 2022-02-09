@@ -1,0 +1,33 @@
+variables:
+  Project: tw591-testing
+  Bee_Host: https://bee.8591.com.tw
+  Online_Branch: master
+
+
+
+stages:
+  - build
+
+
+# job_build_master:
+#   stage: build
+#   retry: 2
+#   script:
+#     - python /home/htdocs/addcn-build-master/build.py
+#   only:
+#     - master
+#   tags:
+#     - tw591-runner-php704-node7-nfs9
+
+
+
+job_build_develop:
+  stage: build
+  retry: 2
+  script:
+    - python /home/htdocs/addcn-build-master/build.py
+  only:
+    - develop
+  tags:
+    - t8591-runner-php72-node8-nfs24
+
